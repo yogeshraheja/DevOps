@@ -13,7 +13,7 @@ Option2: While using source to activate a virtual environment in a Dockerfile is
 - apt-get update
 - apt-get install python3-pip python3.12-venv
 - python3 -m venv devopspython
-- <Full-path>/devopspython/bin/pip install -r requirements.txt
-- <Full-path>/devopspython/bin/python3 app.py &
+- /devopspython/bin/pip install -r requirements.txt
+- /devopspython/bin/python3 app.py &
 
 Note: Option2 is generally used in Dockerfile for Python application, and we will use the same in one of our demos for containerizing Python application.
