@@ -6,7 +6,7 @@ metadata:
   name: devopsdep
   namespace: devops
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: devopsdep
