@@ -16,5 +16,5 @@ spec:
         app: devopsdep
     spec:
       containers:
-      - image: yogeshraheja/devopspython:v1
-        name: devopspython
+        - image: yogeshraheja/devopspython:5225b4ab7174ab6d4a501ea8acb625c71de3ada5
+          name: devopspython
