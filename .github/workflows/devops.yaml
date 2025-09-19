@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - ./manifests
 
 jobs:
   devops-ci:
@@ -33,6 +35,7 @@ jobs:
         git config user.email "yogesh.raheja@thinknyx.com"
         git commit -am "Updating image tag inside manifest file using Actions"
         git push
+
 
 
 
