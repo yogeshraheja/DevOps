@@ -1,6 +1,9 @@
 name: DevOps CICD Pipeline
 
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
   devops-ci:
@@ -20,7 +23,16 @@ jobs:
         file: ./Dockerfile
         tags: yogeshraheja/devopspython:${{ github.sha }}
         push: true
-        
+    - name: Updating image tag inside manifest file
+      run: |
+        pip install yq
+        yq e -i '.spec.template.spec.containers[0].image = "yogeshraheja/devopspython:${{ github.sha }}"' ./manifests/02_devopsdep.yaml
+    - name: Commit and Push the code
+      run: |
+        git config user.name "Yogesh Raheja"
+        git config user.email "yogesh.raheja@thinknyx.com"
+        git commit -am "Updating image tag inside manifest file using Actions"
+        git push
 
 
 
