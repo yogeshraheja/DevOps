@@ -4,7 +4,7 @@ on: push
 
 jobs:
   devops-ci:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -20,3 +20,4 @@ jobs:
         file: ./Dockerfile
         tags: yogeshraheja/devopspython:$GITHUB_RUN_ID
         
+
