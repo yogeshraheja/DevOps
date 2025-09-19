@@ -4,11 +4,11 @@ metadata:
   labels:
     app: devopsdep
   name: devopsdep
-  namespace: devops
+  namespace: devopss
 spec:
   ports:
   - name: 80-80
-    nodePort: 31111
+    nodePort: 31110
     port: 8080
     protocol: TCP
     targetPort: 8080
