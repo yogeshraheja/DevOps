@@ -54,11 +54,12 @@ jobs:
           --insecure \
           --grpc-web \
           --username admin \
-          --password ${{ secrets.ARGO_PASSWORD }}
+          --password ${{ secrets.ARGOCD_PASSWORD }}
           
     - name: Syncing Application
       run: |
         argocd app sync test
+
 
 
 
