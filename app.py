@@ -8,7 +8,7 @@ def main():
 
 @app.route("/services")
 def services():
-    return "Version 1 work in progress!"
+    return "Version 2 work in progress!"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
