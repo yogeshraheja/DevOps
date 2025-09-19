@@ -19,7 +19,9 @@ jobs:
       with:
         file: ./Dockerfile
         tags: yogeshraheja/devopspython:${{ github.run_id }}
+        push: true
         
+
 
 
 
