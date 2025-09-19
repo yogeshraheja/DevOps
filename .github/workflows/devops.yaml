@@ -37,6 +37,29 @@ jobs:
         git push
 
 
+  devops-cd:
+    needs: devops-ci
+    runs-on: self-hosted
+
+    steps:
+    - name: Installing Argo CD CLI in Runner
+      run: |
+        curl -ksSL -o argocd-linux-amd64 https://argocd-server.argocd/download/argocd-linux-amd64
+        sudo chmod 755 argocd-linux-amd64
+        sudo mv ./argocd-linux-amd64 /usr/local/bin/argocd
+
+    - name: Login via ArgoCLI
+      run: |
+        argocd login argocd-server.argocd \
+          --insecure \
+          --grpc-web \
+          --username admin \
+          --password ${{ secrets.ARGO_PASSWORD }}
+          
+    - name: Syncing Application
+      run: |
+        argocd app sync test
+
 
 
 
