@@ -18,6 +18,7 @@ jobs:
       uses: docker/build-push-action@v6.18.0
       with:
         file: ./Dockerfile
-        tags: yogeshraheja/devopspython:$GITHUB_RUN_ID
+        tags: yogeshraheja/devopspython:$ {{ github.run_id }}
         
+
 
