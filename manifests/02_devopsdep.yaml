@@ -4,7 +4,7 @@ metadata:
   labels:
     app: devopsdep
   name: devopsdep
-  namespace: devops
+  namespace: devopss
 spec:
   replicas: 5
   selector:
